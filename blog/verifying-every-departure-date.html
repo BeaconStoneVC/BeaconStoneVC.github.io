@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verifying every departure date, not just the easy ones · BeaconStoneVC blog</title>
+  <meta name="description" content="A gap in our run procedure let a few exit dates slip through with the wrong date. Here&#39;s what we found and the check we added so it can&#39;t happen quietly again.">
+  <link rel="canonical" href="https://beaconstonevc.com/blog/verifying-every-departure-date.html">
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BeaconStoneVC">
+  <meta property="og:title" content="Verifying every departure date, not just the easy ones · BeaconStoneVC blog">
+  <meta property="og:description" content="A gap in our run procedure let a few exit dates slip through with the wrong date. Here&#39;s what we found and the check we added so it can&#39;t happen quietly again.">
+  <meta property="og:url" content="https://beaconstonevc.com/blog/verifying-every-departure-date.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>%F0%9F%94%A6</text></svg>">
+  <link rel="alternate" type="application/rss+xml" title="BeaconStoneVC activity" href="/feed.xml">
+  <link rel="stylesheet" href="/static/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BeaconStoneVC",
+    "url": "https://beaconstonevc.com",
+    "description": "BeaconStoneVC tracks what venture-capital firms publish on their own public team and portfolio pages, and records the changes between checks \u2014 new and departed portfolio companies, and VC team additions and departures."
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Verifying every departure date, not just the easy ones",
+  "datePublished": "2026-07-13",
+  "author": {"@type": "Organization", "name": "BeaconStoneVC"},
+  "publisher": {"@type": "Organization", "name": "BeaconStoneVC", "url": "https://beaconstonevc.com"},
+  "mainEntityOfPage": "https://beaconstonevc.com/blog/verifying-every-departure-date.html"
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">BeaconStoneVC</a>
+      <nav class="nav">
+<a href="/">Activity</a><a href="/methodology.html">Methodology</a><a href="/blog/" aria-current="page">Blog</a>      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+<article class="prose blog-post">
+  <p class="post-meta"><a href="/blog/">&larr; All posts</a> &middot; 13 July 2026</p>
+  <h1>Verifying every departure date, not just the easy ones</h1>
+<p class="lede">A gap in our run procedure let a few exit dates slip through with the wrong date. Here&#39;s what we found and the check we added so it can&#39;t happen quietly again.</p>  <p>One of the harder things about tracking VC portfolios from public pages is <strong>dating a
+change correctly</strong>. When a company drops off a firm&rsquo;s portfolio page, the interesting
+question isn&rsquo;t just <em>that</em> it happened — it&rsquo;s <em>when</em>. And &ldquo;when&rdquo; is easy to get subtly
+wrong.</p>
+<h2>What we found</h2>
+<p>Our run procedure re-dates a detected change when there&rsquo;s public evidence that the real
+event happened on a specific date — a firm&rsquo;s own announcement, for example — rather than
+just recording the date our scraper first noticed it. That re-dating step had a blind
+spot: it would confirm a date from the firm&rsquo;s portfolio page, but in a handful of cases
+it never opened the <em>second</em> source that would have corrected it. The result was a small
+number of departures and one addition carried with a detection date when a better,
+source-verified date was actually available.</p>
+<p>None of these were wrong in the sense of &ldquo;this company didn&rsquo;t leave the portfolio&rdquo; —
+the change was real. They were wrong in the narrower, and to us more important, sense of
+<strong>being dated to when we noticed rather than to what the evidence supported.</strong></p>
+<h2>What we changed</h2>
+<p>We tightened the re-verification pass so it&rsquo;s <strong>exhaustive rather than opportunistic</strong>:
+every departure and addition in scope now gets checked against all available sources
+before its date is accepted, not just the first source that happens to confirm it. The
+few affected rows were re-dated and the corrected record was deployed.</p>
+<p>Just as important, the check now <strong>fails loudly</strong> instead of passing quietly. The whole
+point of a run procedure is that a gap should surface as a flagged discrepancy on the
+next run, not sit invisibly in the data. A verification step you can&rsquo;t see failing isn&rsquo;t
+really a verification step.</p>
+<h2>Why we&rsquo;re writing this down</h2>
+<p>BeaconStoneVC is an automated, observational record — it <em>will</em> contain mistakes, and we
+say so plainly in our <a href="/methodology.html">methodology</a>. What we can promise isn&rsquo;t
+perfection; it&rsquo;s that when we find a systematic gap, we fix the <strong>procedure</strong>, not just
+the row, and we tell you about it. This blog is where those changes get written down.</p>
+</article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="disclaimer">
+        BeaconStoneVC records what venture-capital firms publish on their own public
+        pages and the changes between checks. Dates are when a change was
+        <em>detected</em>, not when a real-world event occurred. Provided
+        <strong>as&nbsp;is, with no warranty</strong>; not investment advice. Do not
+        rely on it &mdash; verify against primary sources.
+      </p>
+      <p class="foot-meta">
+Data last updated 16 July 2026.         Dataset released under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.
+        &middot; <a href="/methodology.html">Methodology</a>
+        &middot; <a href="/feed.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
