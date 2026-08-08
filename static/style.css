@@ -151,6 +151,9 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
 .data-cta h2 { margin-top: 0; font-size: 1.15rem; }
 .data-cta p { margin-bottom: 0; color: var(--muted); }
 .empty { color: var(--muted); padding: 1.5rem 0; }
+/* search.js failure state — "could not search", visually distinct from the
+   "searched, found nothing" .empty line above. */
+.error { color: var(--muted); padding: 1.5rem 0; font-style: italic; }
 
 /* ---- Prose (methodology, blog posts) ---- */
 .prose { max-width: var(--maxw); }
@@ -188,3 +191,20 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
   .badge { min-width: 0; }
   .event { gap: .5rem; }
 }
+
+/* Entity pages (funds, companies) */
+.entity h2 { margin-top: 2rem; }
+.entity .meta { color: #666; font-size: 0.9rem; }
+.entity .note { color: #666; font-size: 0.9rem; }
+.entity .empty { color: #666; font-style: italic; }
+.entity .banner { background: #fff6e5; border-left: 3px solid #e0a33e; padding: 0.6rem 0.8rem; }
+.entity-table { width: 100%; border-collapse: collapse; }
+.entity-table th, .entity-table td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #eee; vertical-align: top; }
+.entity-list { list-style: none; padding: 0; }
+.entity-list li { padding: 0.3rem 0; border-bottom: 1px solid #f2f2f2; }
+.chip { display: inline-block; font-size: 0.75rem; color: #555; background: #f2f2f2; border-radius: 3px; padding: 0.05rem 0.4rem; margin-left: 0.3rem; }
+.fact-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin: 0.6rem 0 1rem; font-size: 0.9rem; }
+.entity-index { columns: 3 14rem; }
+
+#site-search { width: 100%; max-width: 28rem; padding: 0.45rem 0.6rem; font-size: 1rem; }
+#site-search-results { margin-top: 0.8rem; }
