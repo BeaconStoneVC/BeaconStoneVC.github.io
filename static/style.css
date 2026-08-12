@@ -127,6 +127,25 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
   background: var(--amber-soft); color: var(--amber); border: 1px solid transparent;
 }
 
+/* ---- High-confidence (independently verified) movement badge ----
+   Shown when Step 2/3 found EXTERNAL evidence for a movement, not merely a
+   page-diff between two scrapes. Rendered by templates/_hc_badge.html on the
+   activity feed and on fund + company pages.
+
+   Green, and shaped like .chip-retired so the two read as one family of
+   annotations rather than two systems. It inherits the theme variables, so it
+   works in dark mode without a second rule — unlike the webapp original, which
+   hardcoded --signal/--paper and had no dark theme to satisfy. */
+.hc-badge {
+  display: inline-flex; align-items: center; gap: .25rem;
+  font-size: .7rem; font-weight: 600; letter-spacing: .01em;
+  padding: .05rem .4rem; border-radius: 999px; white-space: nowrap;
+  vertical-align: baseline;
+  background: var(--green-soft); color: var(--green); border: 1px solid transparent;
+  cursor: default;
+}
+.hc-badge-check { font-size: .75rem; line-height: 1; }
+
 /* ---- Funds no longer tracked (persistent list) ---- */
 .retired-section {
   margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-radius: 10px;
