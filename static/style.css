@@ -75,16 +75,10 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
 .lede { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.5rem; }
 .intro { margin-bottom: 1.5rem; }
 
-/* ---- Feed controls ---- */
-.feed-controls { display: flex; gap: .5rem; margin: 0 0 1.5rem; flex-wrap: wrap; }
-.fbtn {
-  font: inherit; font-size: .9rem; cursor: pointer;
-  padding: .35rem .8rem; border-radius: 999px;
-  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-}
-.fbtn:hover { border-color: var(--accent); }
-.fbtn.is-active { background: var(--accent-soft); border-color: var(--accent); color: var(--text); font-weight: 600; }
-.fbtn .count { opacity: .6; font-variant-numeric: tabular-nums; margin-left: .15rem; }
+/* The Companies/People filter controls (.feed-controls/.fbtn) and the
+   [data-show] category rules were removed on 2026-08-16 with the itemised
+   people lines: the feed is now company events plus a per-day counts table, so
+   there is no second category to toggle. */
 
 /* ---- Feed ---- */
 .feed-day { margin-bottom: 1.6rem; }
@@ -101,11 +95,40 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
 .event:last-child { border-bottom: 0; }
 .event-text { flex: 1; }
 
-/* Category filter (progressive enhancement) */
-.feed[data-show="company"] .event[data-category="people"] { display: none; }
-.feed[data-show="people"] .event[data-category="company"] { display: none; }
-.feed[data-show="company"] .feed-day:not(:has(.event[data-category="company"])),
-.feed[data-show="people"] .feed-day:not(:has(.event[data-category="people"])) { display: none; }
+/* ---- Per-day people summary (counts only — never a name or a title) ---- */
+.people-summary { margin: .6rem 0 .2rem; }
+.ps-heading {
+  font-size: .82rem; font-weight: 600; color: var(--muted);
+  margin: .4rem 0 .4rem;
+}
+.ps-table {
+  width: 100%; border-collapse: collapse; font-size: .88rem;
+  font-variant-numeric: tabular-nums;
+}
+.ps-table th, .ps-table td {
+  text-align: right; padding: .3rem .5rem; border-bottom: 1px solid var(--border);
+}
+.ps-table thead th { color: var(--muted); font-weight: 600; font-size: .78rem; }
+.ps-table thead th[colspan] { text-align: center; }
+.ps-table th[scope="row"], .ps-table thead th:first-child { text-align: left; font-weight: 500; }
+.ps-table tfoot th, .ps-table tfoot td { font-weight: 600; border-bottom: 0; }
+.ps-table tbody tr:last-child td, .ps-table tbody tr:last-child th { border-bottom-width: 2px; }
+.ps-note { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; }
+
+/* Narrow screens: let the table scroll rather than squash the whole page. */
+@media (max-width: 640px) {
+  .people-summary { overflow-x: auto; }
+  .ps-table { min-width: 34rem; }
+}
+
+/* ---- Beta non-disclosure note ---- */
+.beta-note {
+  margin: 2rem 0 0; padding: 1rem 1.1rem;
+  border: 1px solid var(--border); border-radius: 6px; background: var(--surface);
+}
+.beta-note h2 { font-size: 1rem; margin: 0 0 .5rem; }
+.beta-note p { font-size: .9rem; color: var(--muted); margin: 0 0 .5rem; }
+.beta-note p:last-child { margin-bottom: 0; }
 
 /* ---- Badges ---- */
 .badge {
