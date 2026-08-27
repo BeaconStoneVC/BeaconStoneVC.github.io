@@ -250,3 +250,13 @@ h1 { font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .
 
 #site-search { width: 100%; max-width: 28rem; padding: 0.45rem 0.6rem; font-size: 1rem; }
 #site-search-results { margin-top: 0.8rem; }
+
+/* Site notice — shown only when config.SITE_NOTICE is set and unexpired.
+   Uses the existing accent tokens so it inherits light and dark automatically. */
+.site-notice {
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--accent);
+  color: var(--text);
+  font-size: .92rem;
+}
+.site-notice .wrap { padding-top: .7rem; padding-bottom: .7rem; }
