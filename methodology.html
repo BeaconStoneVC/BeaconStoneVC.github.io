@@ -3,169 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Methodology &amp; data · BeaconStoneVC</title>
-  <meta name="description" content="How BeaconStoneVC compiles VC team and portfolio data from public sources — what it observes, what it does and doesn&#39;t claim, and how to request a correction.">
-<link rel="canonical" href="https://beaconstonevc.com/methodology">
-  <!-- OpenGraph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="BeaconStoneVC">
-  <meta property="og:title" content="Methodology &amp; data · BeaconStoneVC">
-  <meta property="og:description" content="How BeaconStoneVC compiles VC team and portfolio data from public sources — what it observes, what it does and doesn&#39;t claim, and how to request a correction.">
-<meta property="og:url" content="https://beaconstonevc.com/methodology">  <meta name="twitter:card" content="summary">
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>%F0%9F%94%A6</text></svg>">
-  <link rel="alternate" type="application/rss+xml" title="BeaconStoneVC activity" href="/feed.xml">
+  <title>Methodology · BeaconStoneVC</title>
+  <meta name="description" content="A verified change-log of venture capital portfolios, built from what firms publish on their own pages.">
   <link rel="stylesheet" href="/static/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BeaconStoneVC",
-    "url": "https://beaconstonevc.com",
-    "description": "BeaconStoneVC tracks what venture-capital firms publish on their own public team and portfolio pages, and records the changes between checks \u2014 new and departed portfolio companies, and VC team additions and departures."
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "BeaconStoneVC \u2014 VC portfolio & team change dataset",
-  "description": "BeaconStoneVC tracks what venture-capital firms publish on their own public team and portfolio pages, and records the changes between checks \u2014 new and departed portfolio companies, and VC team additions and departures.",
-  "url": "https://beaconstonevc.com/methodology",
-  "creator": {
-    "@type": "Organization",
-    "name": "BeaconStoneVC",
-    "url": "https://beaconstonevc.com"
-  },
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "isAccessibleForFree": true,
-  "keywords": [
-    "venture capital",
-    "VC firms",
-    "portfolio companies",
-    "VC team changes",
-    "startup investors"
-  ],
-  "dateModified": "2026-08-20"
-}
-</script></head>
+  <link rel="alternate" type="application/rss+xml" title="BeaconStoneVC changes" href="/feed.xml">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>🔦</text></svg>">
+</head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/">BeaconStoneVC</a>
-      <nav class="nav">
-<a href="/">Activity</a><a href="/funds/">Funds</a><a href="/companies/">Companies</a><a href="/methodology.html" aria-current="page">Methodology</a><a href="/blog/">Blog</a>        <a href="/search.html">Search</a>
-      </nav>
-    </div>
+    <a class="brand" href="/">BeaconStoneVC</a>
+    <nav>
+      <a href="/">Changes</a>
+      <a href="/funds/">Funds</a>
+      <a href="/companies/">Companies</a>
+      <a href="/methodology">Methodology</a>
+    </nav>
   </header>
+  <main>
 
-  <div class="site-notice" role="status">
-    <div class="wrap">Data collection is paused while the tracker is being upgraded. The data below is complete up to 20 August 2026.</div>
-  </div>
-
-  <main class="wrap">
 <article class="prose">
-  <h1>Methodology &amp; data</h1>
-<p><strong>BeaconStoneVC</strong> is a free, structured record of venture-capital firms and their
-portfolio companies, compiled entirely from public sources and compared run after run.
-This page documents how the data is collected, what it does and doesn&rsquo;t claim, and how
-to correct it.</p>
-<h2>What we compile</h2>
-<p>Within the markets it covers, BeaconStoneVC compiles three kinds of record from public
-sources:</p>
-<ul>
-<li><strong>VC firm people</strong> — who each firm publicly lists on its team, with title, location,
-  and LinkedIn where available.</li>
-<li><strong>Portfolio companies</strong> — every company a fund lists on its public portfolio page,
-  with stage and sector tags where available.</li>
-<li><strong>Portfolio-company people</strong> — for a subset of portfolio companies, the people the
-  company publicly lists on its own team.</li>
-</ul>
-<h2>How it&rsquo;s collected</h2>
-<p>Each VC firm has its own structured collection process, tailored to how that firm
-publishes. Collectors run on a recurring schedule — <strong>not in real time</strong> — normalise
-results into a common shape, compare them against the previous snapshot, and corroborate
-before a change becomes a record. Where a firm doesn&rsquo;t publish a structured team or
-portfolio at all, we record that as a rejection rather than fabricating coverage.</p>
-<h2>What we observe vs. what we claim</h2>
-<p>All data is based on publicly available information published by each VC firm and
-portfolio company. When we report that a company is &ldquo;now listed&rdquo; or &ldquo;no longer listed,&rdquo;
-it means we observed that in a recent read of the public record.</p>
-<p>Labels such as <em>now listed</em>, <em>no longer listed</em>, <em>marked exited</em>, and <em>team addition /
-departure</em> summarise <strong>detected changes in public listings</strong> — they do <strong>not</strong> claim
-direct confirmation of an investment, an exit, an employment event, or the date any of
-those happened. <strong>Timestamps reflect when BeaconStoneVC detected a change, not
-necessarily when the underlying real-world event occurred.</strong></p>
-<p>A company can disappear from a listing for reasons that have nothing to do with an
-investment ending — a website redesign, a page reorganisation, an outage, or an editorial
-choice. An automated step attempts to set these aside, but it is imperfect and some may
-remain. Treat every row as <em>&ldquo;this is what the page showed, and when we saw it change,&rdquo;</em>
-and verify against primary sources before acting on it.</p>
-<h2>People and privacy</h2>
-<p><strong>We do not publish individual team movements.</strong> BeaconStoneVC records team changes at
-named-person level from firms&rsquo; and companies&rsquo; own public pages, but at this <strong>beta stage
-those details are not disclosed publicly</strong>. What the site publishes is a <strong>daily count</strong>:
-how many people joined, left, or changed role at VC firms, and the same for portfolio
-companies, broken down by macro-region.</p>
-<p>Those counts carry <strong>no name, no job title, and no indication of which firm or company a
-movement belongs to</strong>. Region is deliberately the coarsest unit we found useful — a
-per-country daily count is often a single movement, which narrows the field to a handful
-of firms; a region groups enough of them that it does not.</p>
-<p>The <strong>downloadable dataset is companies-only</strong>: data about named individuals (VC team
-members and portfolio-company staff) is intentionally excluded from the machine-readable
-export, as it is from the activity feed and the RSS feed.</p>
-<p>This is a beta-stage posture, not a permanent guarantee about future versions of the
-site. If you believe something about you is recorded here, or you have a question about
-what we hold, <a href="mailto:hello@beaconstonevc.com?subject=Privacy%20enquiry">get in touch</a>.</p>
-<h2>Coverage &amp; freshness</h2>
-<p>We cover a curated set of venture ecosystems where public VC information is fragmented
-across each firm — heaviest in the UK and Singapore. New firms are added on a recurring
-basis and vetted against the same coverage criteria; a meaningful share of evaluated
-firms don&rsquo;t pass (logo-only portfolio grids, dynamic filter UIs that defeat structured
-collection, expired SSL, or no public team listing at all), and we keep a record of
-those rejections. Pipelines run on a recurring schedule, not in real time.</p>
-<h3>Funds we no longer track</h3>
-<p>Sometimes we stop tracking a fund — its site goes dark, it&rsquo;s redesigned beyond
-structured collection, or we retire it deliberately. When that happens the fund&rsquo;s
-portfolio and team <strong>stop updating</strong>: what we hold for it is a <strong>frozen last snapshot
-from when we stopped, not a current view.</strong> In the activity feed above, any change at
-such a fund carries a <em>&ldquo;no longer tracked&rdquo;</em> tag. In the machine-readable dataset, the
-per-VC coverage file (<code>vc_coverage.csv</code>) marks these funds with a <code>Current Status</code> of
-<code>permanently_removed</code> (retired) or <code>source_down</code> (site currently unreachable).</p>
-<h2>Corrections</h2>
-<p>If a person, company, categorisation, or change looks wrong, it can be disputed.
-Corrections are applied to the public record on the next run.</p>
-<h2>License &amp; disclaimer</h2>
-<p>The underlying facts are drawn from information each firm publishes openly. The compiled,
-structured dataset is made available under
-<a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</p>
-<blockquote>
-<p>This dataset is provided <strong>&ldquo;as is,&rdquo; with no warranty</strong> of any kind, and is <strong>not
-investment, financial, legal, or other professional advice</strong>. It is an automated,
-observational record of what public web pages showed and when a change was detected.
-It may contain errors, including false positives. <strong>Do not rely on it</strong> as a statement
-of fact about any company or firm; verify against authoritative sources before acting.</p>
-</blockquote>
-</article>
-  </main>
+<h1>Methodology</h1>
+<p>BeaconStoneVC records what venture capital firms and their portfolio companies publish on their own public pages, and the changes between daily checks.</p>
 
+<h2>Our standard</h2>
+<p>A change that isn't correct should never appear here. A change we can't prove is held back and checked again the next day, so a change may appear late or not at all. We would rather be late than wrong.</p>
+<p>In November 2026 we discarded everything we had previously published and started again from nothing, because we could no longer tell which of our old records were right. We add firms as fast as we can keep to this standard, so coverage is small and growing.</p>
+
+<h2>How a list is checked</h2>
+<ol>
+  <li>Each page is opened in a real browser and saved.</li>
+  <li>A small program written for that page reads the saved copy and produces a list.</li>
+  <li>Separately, AI readers go through the saved page piece by piece without seeing that list, and write down what they see.</li>
+  <li>The two are compared. Any real difference holds that page back, and we keep showing its last proven list and the date it was proven.</li>
+</ol>
+
+<h2>How a change is checked</h2>
+<p>A first check of a page only records where it starts, so it never counts as a change. After that, each change is examined on its own:</p>
+<ul>
+  <li><strong>A company newly listed</strong> must be confirmed on the firm's page by two separate AI readers, quoting words that a program then finds on the page.</li>
+  <li><strong>A company no longer listed</strong> must be gone from the firm's page on two separate days. We say "no longer listed" because that is what the page proves. It doesn't tell us that an investment ended.</li>
+</ul>
+
+<h2>How we test the checks</h2>
+<p>Every day we plant errors, such as a made-up name on a saved page, a false departure, or the wrong website for a company. They go through the same checks as real data. If any is missed, nothing is published that day.</p>
+
+<h2>People</h2>
+<p>We never publish anyone's name, job title or where they moved to. People changes appear only as daily counts by region, and only where we track at least 10 firms, because a smaller count could point to one firm. They also need separate evidence before they count, so this section may be empty for some time.</p>
+
+<h2>Dates</h2>
+<p>Dates show when we detected a change, not when anything happened in the real world.</p>
+
+<h2>Companies and websites</h2>
+<p>When two firms list a company under different names, we treat them as one company only if two AI readers each find so independently and a program confirms the quoted evidence. Otherwise we keep them apart. A website link appears only after an AI reader has opened the site and confirmed it belongs to that company.</p>
+
+<h2>Limits</h2>
+<p>This is a record of what public pages say, and those pages can themselves be wrong or out of date. These checks make errors rare but can't rule them out. Provided as is, with no warranty. Not investment advice. Please verify against primary sources before relying on anything here.</p>
+
+<h2>Data</h2>
+<p>The portfolio data is published as CSV under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> in the <a href="https://github.com/BeaconStoneVC/beaconstonevc-data">dataset repository</a>. It covers companies only, never people.</p>
+</article>
+
+  </main>
   <footer class="site-footer">
-    <div class="wrap">
-      <p class="disclaimer">
-        BeaconStoneVC records what venture-capital firms publish on their own public
-        pages and the changes between checks. Dates are when a change was
-        <em>detected</em>, not when a real-world event occurred. Provided
-        <strong>as&nbsp;is, with no warranty</strong>; not investment advice. Do not
-        rely on it &mdash; verify against primary sources.
-      </p>
-      <p class="foot-meta">
-Data last updated 20 August 2026.         Dataset released under
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.
-        &middot; <a href="/methodology.html">Methodology</a>
-        &middot; <a href="/feed.xml">RSS</a>
-      </p>
-    </div>
+    <p>Built from what firms publish on their own public pages. Dates are when we detected a change, not when anything happened. Provided as is, with no warranty. Not investment advice.</p>
+    <p>Last checked 5 November 2026. <a href="https://github.com/BeaconStoneVC/beaconstonevc-data">Dataset</a> released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="/methodology">Methodology</a>. <a href="/feed.xml">RSS</a>.</p>
   </footer>
 </body>
 </html>

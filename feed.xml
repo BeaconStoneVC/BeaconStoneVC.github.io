@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>BeaconStoneVC — VC activity</title>
-    <link>https://beaconstonevc.com/</link>
-    <description>BeaconStoneVC tracks what venture-capital firms publish on their own public team and portfolio pages, and records the changes between checks — new and departed portfolio companies, and VC team additions and departures.</description>
-    <language>en</language>
-    <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
-
-  </channel>
-</rss>
+<rss version="2.0"><channel><title>BeaconStoneVC changes</title><link>https://beaconstonevc.com</link><description>Verified changes to venture capital portfolio pages.</description>
+</channel></rss>
