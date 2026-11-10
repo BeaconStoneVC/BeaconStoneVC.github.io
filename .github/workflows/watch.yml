@@ -1,0 +1,22 @@
+# Installed by C:\code\beaconstone from tools/watch. Edits made here are overwritten by its next publish.
+# If this fails, GitHub emails the account: the live site hasn't been updated for about two days.
+name: Watch the daily run
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  watch:
+    name: Is beaconstonevc.com still being updated
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github
+      - run: python3 .github/watch.py
