@@ -57,6 +57,10 @@ def main(fetch=fetch, sleep=time.sleep, now=None):
     if isinstance(failure, urllib.error.HTTPError) and text is None:
         message = (f"The live site answered HTTP {failure.code} for status.json, so there's no telling when it was "
                    "last updated.")
+        if failure.code in (525, 526):
+            # 2026-11-10: GitHub's certificate for the domain expired, and Cloudflare in Full (strict) refused it.
+            message += (" Visitors see an error page: Cloudflare can't make a secure connection to GitHub Pages, "
+                        "usually because GitHub's certificate for beaconstonevc.com has expired.")
     elif text is None:
         message = f"beaconstonevc.com couldn't be reached from GitHub after {TRIES} tries: {failure}"
     else:
